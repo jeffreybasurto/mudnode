@@ -15,8 +15,8 @@
       });
       
       $("form").live("submit", function() {
-        socket.emit("cmd", $("input").text());
-        $("input").text("");
+        socket.emit("cmd", $("input").value();
+        $("input").value("");
         return false;
       });
 
