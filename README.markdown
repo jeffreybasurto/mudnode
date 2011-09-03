@@ -30,7 +30,6 @@ Once you have heroku commandline you can create your app
 
 ```
 heroku create name_of_project
-heroku ps:scale web:1
 ```
 
 Now you simply need to push a git repo.  If you already have a repo you can skip this set. Otherwise set it up:
@@ -41,6 +40,24 @@ git add .
 git push heroku master
 ```
 
+As the final step you need to allocate a dyno for the game to run on:
+
+```
+heroku ps:scale web:1
+```
+
+You can check that this worked with:
+
+```
+heroku ps
+```
+
+
 The game will boot up and name_of_project.heroku.com is the address.
 If there's a problem try heroku logs to see what is keeping it from booting. 
+
+
+Caveats:
+Heroku won't allow the app to stay up unless it binds to port 80 within 60 seconds.  So no matter what, the minimal web server included must stay in place to use heroku as a platform.
+
 
