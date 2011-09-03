@@ -20,5 +20,5 @@
       return console.log(d);
     });
   });
-  console.log(process.env.MONGOHQ_URL);
+  console.log(process.env.MONGOLAB_URL);
 }).call(this);

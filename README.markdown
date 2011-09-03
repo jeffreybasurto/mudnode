@@ -40,12 +40,14 @@ git add .
 git push heroku master
 ```
 
-As the final step you need to allocate a dyno for the game to run on:
+As the final step you need to allocate a dyno and a database for the game to run on:
 
 ```
+heroku addons:add mongolab:starter
 heroku ps:scale web:1
 ```
 
+The starter mongodb gets you 240 megabytes which isn't bad at all.
 You can check that this worked with:
 
 ```
