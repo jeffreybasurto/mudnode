@@ -3,9 +3,12 @@
   express = require('express');
   app = express.createServer(express.logger());
   port = process.env.PORT || 3000;
+  app.set('view engine', 'jade');
+  app.set('view options', {
+    layout: false
+  });
   app.get('/', function(request, response) {
-    response.send('Welcome to MudNode.');
-    return response.send('Operating as an echo server.');
+    return res.render('index');
   });
   app.listen(port, function() {
     return console.log("Listening on " + port);
