@@ -3,7 +3,7 @@
   express = require('express');
   app = express.createServer(express.logger());
   port = process.env.PORT || 3000;
-  app.set('view engine', 'jade');
+  app.set('view engine', 'eco');
   app.set('view options', {
     layout: false
   });
