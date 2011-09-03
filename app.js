@@ -19,7 +19,7 @@
   MyModel = mongoose.model('Player');
   player = new MyModel;
   player.name = 'Testuser';
-  instance.save(function(err) {
+  player.save(function(err) {
     return console.log("saving");
   });
   MyModel.find({}, function(err, docs) {
@@ -27,5 +27,4 @@
       return console.log(d);
     });
   });
-  console.log(process.env.MONGOLAB_URI);
 }).call(this);

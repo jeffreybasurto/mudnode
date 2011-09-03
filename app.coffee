@@ -24,15 +24,11 @@ MyModel = mongoose.model 'Player'
 player = new MyModel
 player.name = 'Testuser'
 
-instance.save (err) ->
+player.save (err) ->
   console.log("saving")
 
 MyModel.find {}, (err, docs) ->
   _.each docs, (d)-> console.log(d)
-  
-  
-console.log(process.env.MONGOLAB_URI)
-
 
   
 
