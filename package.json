@@ -6,7 +6,8 @@
     "mongoose": "2.0.4",
     "underscore": "1.1.7",
     "express":"",
-    "eco":""
+    "eco":"",
+    "socket.io":""
   }
 }
 
