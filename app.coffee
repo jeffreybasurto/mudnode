@@ -1,6 +1,14 @@
 # for web server
 express = require 'express'
+app = express.createServer express.logger
+port = process.env.PORT || 3000; # web port, you can change the 3000 for local dev.  
 
+app.get '/', (request, response) ->
+  response.send 'Welcome to MudNode.'
+
+app.listen port, ->
+  console.log("Listening on " + port)
+  
 # for database 
 mongoose = require 'mongoose'
 # for optional utiltiy

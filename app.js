@@ -1,6 +1,14 @@
 (function() {
-  var MyModel, Player, express, mongoose, player, _;
+  var MyModel, Player, app, express, mongoose, player, port, _;
   express = require('express');
+  app = express.createServer(express.logger);
+  port = process.env.PORT || 3000;
+  app.get('/', function(request, response) {
+    return response.send('Welcome to MudNode.');
+  });
+  app.listen(port, function() {
+    return console.log("Listening on " + port);
+  });
   mongoose = require('mongoose');
   _ = require('underscore');
   mongoose.connect(process.env.MONGOLAB_URI);
