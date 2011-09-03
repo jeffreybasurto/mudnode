@@ -13,13 +13,21 @@
         $("#client-region").append("<div>" + data + "<div>");
         console.log(data);
       });
+      
+      $("form").live("submit", function() {
+        socket.emit("cmd", $("input").text());
+        return false;
+      });
+
     </script>
     <script src="index.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" href="/index.css" type="text/css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
     <div id="client-region">
+      <form>
       <input type="text" name="fname"></input>
+      </form>
     </div>
   </body>
 </html>
