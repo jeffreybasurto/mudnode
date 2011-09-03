@@ -11,7 +11,7 @@
   player.save(function(err) {
     return console.log("saving");
   });
-  MyModel.find({}, function(err, docs) {
+  Player.find({}, function(err, docs) {
     return _.each(docs, function(d) {
       return console.log(d);
     });

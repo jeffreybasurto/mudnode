@@ -14,6 +14,6 @@ player.name = 'Testuser'
 player.save (err) ->
   console.log("saving")
 
-MyModel.find {}, (err, docs) ->
+Player.find {}, (err, docs) ->
   _.each docs, (d)-> console.log(d)
 
