@@ -23,7 +23,7 @@ MyModel.find {}, (err, docs) ->
   _.each docs, (d)-> console.log(d)
   
   
-console.log(process.env.MONGOLAB_URL)
+console.log(process.env.MONGOLAB_URI)
 
 
   
