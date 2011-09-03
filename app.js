@@ -10,7 +10,14 @@
   io.sockets.on('connection', function(socket) {
     socket.emit('msg', "hello world");
     return socket.on('cmd', function(data) {
-      return console.log(data);
+      var s, _i, _len, _ref, _results;
+      _ref = io.sockets.clients();
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        s = _ref[_i];
+        _results.push(s.emit("msg", "echoing cmd:" + data));
+      }
+      return _results;
     });
   });
 }).call(this);
