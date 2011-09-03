@@ -16,6 +16,7 @@
       
       $("form").live("submit", function() {
         socket.emit("cmd", $("input").text());
+        $("input").text("");
         return false;
       });
 
