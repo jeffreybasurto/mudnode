@@ -4,7 +4,9 @@ mongoose = require 'mongoose'
 mongoose.connect process.env.MONGOLAB_URI
 
 # a single user in the database
-Player = new mongoose.Schema { name: String}
+PlayerSchema = new mongoose.Schema { name: String}
+
+Player = mongoose.model('Player', mySchema);
 
 player = new Player
 player.name = 'Testuser'

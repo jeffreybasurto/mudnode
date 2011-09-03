@@ -1,10 +1,11 @@
 (function() {
-  var Player, mongoose, player;
+  var Player, PlayerSchema, mongoose, player;
   mongoose = require('mongoose');
   mongoose.connect(process.env.MONGOLAB_URI);
-  Player = new mongoose.Schema({
+  PlayerSchema = new mongoose.Schema({
     name: String
   });
+  Player = mongoose.model('Player', mySchema);
   player = new Player;
   player.name = 'Testuser';
   player.save(function(err) {
