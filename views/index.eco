@@ -6,6 +6,9 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
       var socket = io.connect('<%= "http://mudnode.herokuapp.com" %>');
+      socket.on("connect", function(data) {
+        $("#client-region").append("<div>Connected.</div>");
+      });
       socket.on('msg', function (data) {
         $("#client-region").append("<div>" + data + "<div>");
         console.log(data);
@@ -15,9 +18,8 @@
     <link rel="stylesheet" href="/index.css" type="text/css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-    Hello World.
     <div id="client-region">
-      
+      <input type="text" name="fname"></input>
     </div>
   </body>
 </html>
