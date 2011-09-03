@@ -1,6 +1,13 @@
 
 #client-region {
+  position: relative;
   height: 400px;
   width: 400px;
   border: 1px solid black;
+}
+
+input {
+  position: absolute;
+  bottom: 0;
+  left: 15px;
 }
