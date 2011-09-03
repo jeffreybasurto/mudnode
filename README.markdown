@@ -27,6 +27,7 @@ Uploading ssh public key /Users/adam/.ssh/id_rsa.pub
 ```
 
 Once you have heroku commandline you can create your app
+
 ```
 heroku create name_of_project
 heroku ps:scale web:1
