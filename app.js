@@ -1,7 +1,7 @@
 (function() {
   var MyModel, Player, app, express, mongoose, player, port, _;
   express = require('express');
-  app = express.createServer(express.logger);
+  app = express.createServer(express.logger());
   port = process.env.PORT || 3000;
   app.get('/', function(request, response) {
     return response.send('Welcome to MudNode.');
