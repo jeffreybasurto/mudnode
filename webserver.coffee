@@ -3,6 +3,8 @@ express = require 'express'
 app = express.createServer express.logger()
 port = process.env.PORT || 3000; # web port, you can change the 3000 for local dev.  
 
+app.use(express.static(__dirname + '/public'))
+
 app.set('view engine', 'eco') # use jade templates by default.
                               # they're just like erb but with coffeescript.
 app.set('view options', {layout: false}) # no html layout.

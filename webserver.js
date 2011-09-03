@@ -3,6 +3,7 @@
   express = require('express');
   app = express.createServer(express.logger());
   port = process.env.PORT || 3000;
+  app.use(express.static(__dirname + '/public'));
   app.set('view engine', 'eco');
   app.set('view options', {
     layout: false
