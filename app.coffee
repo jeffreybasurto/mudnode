@@ -1,8 +1,13 @@
-mongoose = require "mongoose"
-_ = require "underscore"
+# for web server
+express = require 'express'
+
+# for database 
+mongoose = require 'mongoose'
+# for optional utiltiy
+_ = require 'underscore'
 
 #mongoose.connect('mongodb://localhost/my_database');
-mongoose.connect 'mongodb:test:homework@dbh29.mongolab.com:27297/haiku'
+mongoose.connect process.env.MONGOLAB_URI
 
 
 Schema = mongoose.Schema

@@ -1,8 +1,9 @@
 (function() {
-  var MyModel, ObjectId, Schema, Test, instance, mongoose, _;
-  mongoose = require("mongoose");
-  _ = require("underscore");
-  mongoose.connect('mongodb:test:homework@dbh29.mongolab.com:27297/haiku');
+  var MyModel, ObjectId, Schema, Test, express, instance, mongoose, _;
+  express = require('express');
+  mongoose = require('mongoose');
+  _ = require('underscore');
+  mongoose.connect(process.env.MONGOLAB_URI);
   Schema = mongoose.Schema;
   ObjectId = Schema.ObjectId;
   Test = new Schema({
