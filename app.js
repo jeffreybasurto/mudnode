@@ -1,10 +1,11 @@
 (function() {
-  var MyModel, Player, app, express, mongoose, player, port, _;
+  var Player, app, express, mongoose, player, port, _;
   express = require('express');
   app = express.createServer(express.logger());
   port = process.env.PORT || 3000;
   app.get('/', function(request, response) {
-    return response.send('Welcome to MudNode.');
+    response.send('Welcome to MudNode.');
+    return response.send('Operating as an echo server.');
   });
   app.listen(port, function() {
     return console.log("Listening on " + port);
@@ -15,9 +16,7 @@
   Player = new mongoose.Schema({
     name: String
   });
-  mongoose.model('Player', Player);
-  MyModel = mongoose.model('Player');
-  player = new MyModel;
+  player = new Player;
   player.name = 'Testuser';
   player.save(function(err) {
     return console.log("saving");

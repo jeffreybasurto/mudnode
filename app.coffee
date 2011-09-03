@@ -5,6 +5,7 @@ port = process.env.PORT || 3000; # web port, you can change the 3000 for local d
 
 app.get '/', (request, response) ->
   response.send 'Welcome to MudNode.'
+  response.send 'Operating as an echo server.'
 
 app.listen port, ->
   console.log("Listening on " + port)
@@ -18,10 +19,8 @@ mongoose.connect process.env.MONGOLAB_URI
 
 # a single user in the database
 Player = new mongoose.Schema { name: String}
-mongoose.model('Player', Player)
 
-MyModel = mongoose.model 'Player'
-player = new MyModel
+player = new Player
 player.name = 'Testuser'
 
 player.save (err) ->
