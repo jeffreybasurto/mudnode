@@ -1,3 +1,5 @@
+_ = require 'underscore'
+
 # for database 
 mongoose = require 'mongoose'
 

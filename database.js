@@ -1,5 +1,6 @@
 (function() {
-  var Player, PlayerSchema, mongoose, player;
+  var Player, PlayerSchema, mongoose, player, _;
+  _ = require('underscore');
   mongoose = require('mongoose');
   mongoose.connect(process.env.MONGOLAB_URI);
   PlayerSchema = new mongoose.Schema({
