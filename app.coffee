@@ -13,4 +13,4 @@ io.configure ->
 io.sockets.on 'connection', (socket) ->
   socket.emit 'msg', "hello world"
   socket.on 'cmd', (data) ->
-    s.emit("msg", "echoing cmd:" + data) for s in io.sockets.clients()
+    s.emit("msg", "echoing input to all:" + data) for s in io.sockets.clients()

@@ -15,7 +15,7 @@
       _results = [];
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         s = _ref[_i];
-        _results.push(s.emit("msg", "echoing cmd:" + data));
+        _results.push(s.emit("msg", "echoing input to all:" + data));
       }
       return _results;
     });
