@@ -6,20 +6,15 @@ mongoose = require 'mongoose'
 # for optional utiltiy
 _ = require 'underscore'
 
-#mongoose.connect('mongodb://localhost/my_database');
 mongoose.connect process.env.MONGOLAB_URI
 
+# a single user in the database
+Player = new mongoose.Schema { name: String}
+mongoose.model('Player', Player)
 
-Schema = mongoose.Schema
-ObjectId = Schema.ObjectId
-
-Test = new Schema { title: String}
-mongoose.model('Test', Test)
-
-MyModel = mongoose.model 'Test'
-
-instance = new MyModel
-instance.title = 'hello'
+MyModel = mongoose.model 'Player'
+player = new MyModel
+player.name = 'Testuser'
 
 instance.save (err) ->
   console.log("saving")

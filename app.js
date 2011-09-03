@@ -1,18 +1,16 @@
 (function() {
-  var MyModel, ObjectId, Schema, Test, express, instance, mongoose, _;
+  var MyModel, Player, express, mongoose, player, _;
   express = require('express');
   mongoose = require('mongoose');
   _ = require('underscore');
   mongoose.connect(process.env.MONGOLAB_URI);
-  Schema = mongoose.Schema;
-  ObjectId = Schema.ObjectId;
-  Test = new Schema({
-    title: String
+  Player = new mongoose.Schema({
+    name: String
   });
-  mongoose.model('Test', Test);
-  MyModel = mongoose.model('Test');
-  instance = new MyModel;
-  instance.title = 'hello';
+  mongoose.model('Player', Player);
+  MyModel = mongoose.model('Player');
+  player = new MyModel;
+  player.name = 'Testuser';
   instance.save(function(err) {
     return console.log("saving");
   });
