@@ -14,3 +14,5 @@ app.get '/', (request, response) ->
 
 app.listen port, ->
   console.log("Listening on " + port)
+
+exports.app = app;

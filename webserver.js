@@ -14,4 +14,5 @@
   app.listen(port, function() {
     return console.log("Listening on " + port);
   });
+  exports.app = app;
 }).call(this);

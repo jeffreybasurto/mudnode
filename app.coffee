@@ -1,7 +1,16 @@
 # for optional utiltiy
 
-require './webserver.js' # example for the webserver
+Webserver = require './webserver.js' # example for the webserver
 require './database.js' # example for the database
 
 
+io = require('socket.io').listen(Webserver.app)
 
+io.configure -> 
+  io.set("transports", ["xhr-polling"])
+  io.set("polling duration", 10)
+
+io.sockets.on 'connection', (socket) ->
+  socket.emit 'msg', "hello world"
+  socket.on 'cmd', (data) ->
+    console.log(data)
