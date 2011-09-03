@@ -8,7 +8,7 @@ app.set('view engine', 'jade') # use jade templates by default.
 app.set('view options', {layout: false}) # no html layout.
 
 app.get '/', (request, response) ->
-  res.render('index')
+  response.render('index')
 
 app.listen port, ->
   console.log("Listening on " + port)

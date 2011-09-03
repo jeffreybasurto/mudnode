@@ -8,7 +8,7 @@
     layout: false
   });
   app.get('/', function(request, response) {
-    return res.render('index');
+    return response.render('index');
   });
   app.listen(port, function() {
     return console.log("Listening on " + port);
